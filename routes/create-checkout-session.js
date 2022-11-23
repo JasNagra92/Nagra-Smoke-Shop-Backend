@@ -4,7 +4,7 @@ const express = require("express");
 const router = express.Router();
 const MenuItems = require("../models/menuItemModel");
 
-const YOUR_DOMAIN = process.env.REACT_APP_baseURL || "http://localhost:4000/";
+const YOUR_DOMAIN = "https://main.df8w5lofucp0r.amplifyapp.com/" || "http://localhost:4000/";
 
 router.post("/", async (req, res) => {
   const { payload } = req.body;
