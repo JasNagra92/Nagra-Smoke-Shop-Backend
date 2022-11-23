@@ -25,8 +25,6 @@ app.use((req, res, next) => {
   }
 });
 
-app.use(express.static(path.resolve(__dirname, './client/build')));
-
 app.use('/api/menu', menuRoutes);
 app.use('/api/cart', cartRoutes);
 app.use('/create-checkout-session', testRoute);
@@ -35,11 +33,6 @@ app.use('/getExcludedDates', excludedDates);
 app.use('/login', loginRoute);
 app.use('/signup', signupRoute)
 app.use('/myAccount', myAccountRoute)
-
-app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, './client/build', 'index.html'));
-});
-
 
 mongoose
   .connect(process.env.MONGODB_URL, {
